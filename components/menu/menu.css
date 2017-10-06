@@ -1,0 +1,195 @@
+
+
+h1 {
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .4);
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.js-menu {
+    min-width: 550px;
+    margin: 0 auto;
+    border-top: 5px solid #435757;
+    background-color: rgba(255, 255, 255, .2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    padding: 20px;
+
+}
+
+.js-menu::after{
+    content:"";
+    clear:both;
+    display:block;
+}
+
+
+.js-left-menu{
+    width: 230px;
+    float: left;
+    margin-right: 40px;
+    display:block;
+    height: 100%;
+
+}
+
+
+
+.js-menu-items {
+    display: block;
+    margin-left: 250px;
+    margin-top: 15px;
+    min-width: 240px;
+    border-left: 1px dotted #435757;
+}
+
+.js-menu ul{
+    list-style-type: none;
+    margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+
+    -moz-box-sizing: border-box; /* Для Firefox */
+    box-sizing: border-box; /* Ширина блока с полями */
+
+}
+
+.js-menu li {
+    border-top: 1px dashed #fff;
+    animation: undone .5s;
+    padding-top: 10px;
+    /*padding-bottom:0;*/
+    min-height: 45px;
+    padding-left: 10px;
+    margin-left: 0px;
+    display: block;
+    box-sizing: border-box;
+    font-weight:normal;
+    cursor: pointer;
+}
+
+
+.js-menu-items-el {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    counter-reset: done-items undone-items;
+
+}
+
+.js-menu-items-el h2 {
+    position: relative;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+.js-menu-items-el h2::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: -20px;
+    width: 5px;
+    background-color: #435757;
+}
+
+.js-menu-items-el h2::after {
+    display: block;
+    float: right;
+    font-weight: normal;
+}
+
+.js-menu-items-el .done {
+    order: 3;
+}
+
+.js-menu-items-el .done::after {
+    content: ' (' counter(done-items) ')';
+}
+
+.js-menu-items-el .undone {
+    order: 1;
+}
+
+.js-menu-items-el .undone::after {
+    content: ' (' counter(undone-items) ')';
+}
+
+/* hide inputs offscreen, but at the same vertical positions as the correpsonding labels, so that tabbing scrolls the viewport as expected */
+.js-menu-items-el input {
+    display: block;
+    height: 53px;
+    margin: 0 0 -53px -9999px;
+    order: 2;
+    outline: none;
+    counter-increment: undone-items;
+}
+
+.js-menu-items-el input:checked {
+    order: 4;
+    counter-increment: done-items;
+}
+
+.js-menu-items-el label {
+    display: block;
+    position: relative;
+    padding: 20px 0 15px 45px;
+    border-top: 1px dashed #fff;
+    order: 2;
+    cursor: pointer;
+    animation: undone .5s;
+}
+
+.js-menu-items-el label::before {
+    content: '\2610';
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    font: 1.5em 'FontAwesome';
+}
+
+.js-menu-items-el label:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.js-menu-items-el input:checked + label {
+    order: 4;
+    animation: done .5s;
+}
+
+.js-menu-items-el input:checked + label::before {
+    content: '\2611';
+}
+
+.js-menu-items-el label:hover .remove-btn{
+    display:inline-block;
+}
+
+.remove-btn{
+    display: none;
+    padding: 0px 12px;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #333;
+    text-shadow: 0 1px 1px rgba(255,255,255,.75);
+    font-style: normal;
+    float:right;
+}
+
+.remove-btn:hover{
+    color: red;
+}
+
+.js-name-list:hover .remove-btn{
+    display: inline-block;
+}
+
+.js-active-list{
+    background: rgba(127,143,244, .99);
+    color: #ffffff;
+}

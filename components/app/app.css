@@ -1,0 +1,11 @@
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 30px;
+    color: #435757;
+    background: linear-gradient(-20deg, #d0b782 20%, #a0cecf 80%);
+    font: 500 1.2em/1.2 'Roboto', sans-serif;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "components_todolist-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint components/**/*.js",
+    "lintfix": "./node_modules/.bin/eslint components/**/*.js --fix",
+    "serve": "./node_modules/.bin/static-server ."
+  },
+  "author": "Katya Churhel",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-google": "^0.9.1",
+    "static-server": "^2.0.5"
+  }
+}
