@@ -1,2 +1,1 @@
-# components_ToDoList
-Учебный проект
+# Учебный проект To Do List
